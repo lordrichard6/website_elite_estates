@@ -1,0 +1,132 @@
+.properties {
+    background: var(--cream);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.header p {
+    font-family: var(--font-body);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.card {
+    background: white;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.5s ease;
+    position: relative;
+    top: 0;
+}
+
+.card:hover {
+    top: -10px;
+    box-shadow: var(--shadow-lg);
+}
+
+.imageWrapper {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+}
+
+.image {
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.card:hover .image {
+    transform: scale(1.1);
+}
+
+.price {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: var(--black);
+    color: var(--white);
+    padding: 0.75rem 1.5rem;
+    font-family: var(--font-heading);
+    letter-spacing: 1px;
+}
+
+.info {
+    padding: 2rem;
+}
+
+.top {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 1.5rem;
+}
+
+.top h3 {
+    font-size: 1.15rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.specs {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.spec {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.viewBtn {
+    display: block;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0.75rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+}
+
+.viewBtn:hover {
+    background: var(--black);
+    color: var(--gold);
+    border-color: var(--black);
+}
+
+.cta {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+}

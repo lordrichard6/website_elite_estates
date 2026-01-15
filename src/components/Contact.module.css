@@ -1,0 +1,136 @@
+.contact {
+    background: url('/hero.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(15, 15, 15, 0.85);
+}
+
+.wrapper {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+}
+
+.formCard {
+    background: white;
+    padding: 4rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.formCard h3 {
+    color: var(--black);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.subtext {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 2.5rem;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.input,
+.textarea {
+    width: 100%;
+    padding: 0.75rem 0;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    transition: border-color 0.3s;
+    background: transparent;
+}
+
+.input:focus,
+.textarea:focus {
+    outline: none;
+    border-color: var(--black);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: #aaa;
+}
+
+.submitBtn {
+    background: var(--black);
+    color: white;
+    border: none;
+    padding: 1.25rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+    background: var(--gold);
+    color: white;
+}
+
+.info {
+    color: white;
+}
+
+.info h2 {
+    color: white;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+}
+
+.office {
+    margin-bottom: 3rem;
+}
+
+.office h4 {
+    color: var(--gold);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.office p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.phone {
+    margin-top: 0.5rem;
+    color: white !important;
+}
+
+@media (max-width: 900px) {
+    .wrapper {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+
+    .formCard {
+        padding: 2rem;
+    }
+}
