@@ -1,0 +1,40 @@
+.hero {
+    background: var(--cream);
+    padding: 6rem 0 3rem;
+    border-bottom: 1px solid var(--sand);
+    text-align: center;
+}
+
+.hero h1 {
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: none;
+    letter-spacing: normal;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.content h2 {
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.content p {
+    line-height: 1.9;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+}
+
+.content a {
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: underline;
+}
