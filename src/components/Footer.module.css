@@ -1,86 +1,95 @@
 .footer {
     background: var(--black);
-    color: white;
+    color: var(--cream);
     padding: 5rem 0 2rem;
-    text-align: center;
 }
 
-.content {
+.top {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    gap: 4rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.logoWrapper {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 3rem;
-    margin-bottom: 5rem;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-.logo {
+.logoText {
     font-family: var(--font-heading);
-    font-size: 2rem;
-    letter-spacing: 6px;
-    color: white;
-}
-
-.nav {
-    display: flex;
-    gap: 3rem;
-}
-
-.nav a {
-    font-family: var(--font-body);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: rgba(255, 255, 255, 0.7);
-    transition: color 0.3s ease;
-}
-
-.nav a:hover {
+    font-size: 1.25rem;
+    letter-spacing: 3px;
     color: var(--gold);
 }
 
-.social {
-    display: flex;
-    gap: 2rem;
+.brand p {
+    color: var(--sand);
+    line-height: 1.8;
+    max-width: 300px;
 }
 
-.social a {
-    font-size: 0.8rem;
-    color: rgba(255, 255, 255, 0.5);
+.links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+}
+
+.column h4 {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.column a {
+    display: block;
+    color: var(--sand);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.column a:hover {
+    color: var(--gold);
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2rem;
+    font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-.social a:hover {
-    color: white;
+.bottom p {
+    color: var(--sand);
 }
 
-.bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.75rem;
-    color: rgba(255, 255, 255, 0.4);
+.bottom a {
+    color: var(--gold);
+    font-weight: 600;
 }
 
-.legal {
-    display: flex;
-    gap: 2rem;
-}
+@media (max-width: 900px) {
+    .top {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
 
-.legal a {
-    color: rgba(255, 255, 255, 0.4);
-}
-
-@media (max-width: 768px) {
-    .nav {
-        flex-direction: column;
-        gap: 1.5rem;
+    .links {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
 
     .bottom {
         flex-direction: column;
         gap: 1rem;
+        text-align: center;
     }
 }

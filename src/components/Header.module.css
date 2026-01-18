@@ -1,74 +1,130 @@
 .header {
-  position: absolute;
-  width: 100%;
+  position: fixed;
   top: 0;
-  z-index: 100;
-  padding: 2rem 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--sand);
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  position: relative;
 }
 
 .logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.logo span {
   font-family: var(--font-heading);
-  font-size: 1.75rem;
-  letter-spacing: 4px;
-  color: white;
-  text-align: center;
-  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 3px;
+  color: var(--black);
 }
 
 .navLeft,
 .navRight {
   display: flex;
-  gap: 3rem;
   align-items: center;
+  gap: 2.5rem;
+  font-family: var(--font-body);
 }
 
-.navRight {
-  justify-content: flex-end;
-}
-
-.link {
+.navLeft a,
+.navRight a {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--black);
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
-.link:hover {
+.navLeft a:hover,
+.navRight a:hover {
   color: var(--gold);
 }
 
 .icons {
   display: flex;
   gap: 1.5rem;
-  margin-left: 1rem;
-  color: white;
+}
+
+.icon {
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .icon:hover {
   color: var(--gold);
+}
+
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
   cursor: pointer;
+  color: var(--black);
+  z-index: 100;
 }
 
 @media (max-width: 900px) {
   .logo {
-    font-size: 1.25rem;
+    position: static;
+    transform: none;
+  }
+
+  .logo span {
+    display: none;
   }
 
   .navLeft,
   .navRight {
-    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: white;
+    flex-direction: column;
+    padding: 2rem;
+    gap: 1.5rem;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--sand);
   }
 
-  .container {
-    display: flex;
-    justify-content: center;
+  .navLeft.open,
+  .navRight.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .navRight {
+    top: auto;
+    bottom: 0;
+    transform: translateY(100%);
+  }
+
+  .navRight.open {
+    transform: translateY(0);
+  }
+
+  .hamburger {
+    display: block;
   }
 }
